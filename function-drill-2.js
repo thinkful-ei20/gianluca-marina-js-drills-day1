@@ -80,12 +80,44 @@ function daysInAMonth(month, leapYear) {
 	return `There are ${result} days in ${month}`;
 }
 
-console.log(daysInAMonth('January', true));
-console.log(daysInAMonth('Febuary', false));
-console.log(daysInAMonth('March', false));
-console.log(daysInAMonth('Febuary', true));
-console.log(daysInAMonth('June', true));
-console.log(daysInAMonth('Fred', false));
+// console.log(daysInAMonth('January', true));
+// console.log(daysInAMonth('Febuary', false));
+// console.log(daysInAMonth('March', false));
+// console.log(daysInAMonth('Febuary', true));
+// console.log(daysInAMonth('June', true));
+// console.log(daysInAMonth('Fred', false));
+
+function rockPaperScissors(number) {
+	if(typeof number !== 'number'){
+		throw new Error('Must use valid input: 1,2 or 3');
+	}
+	const rps = ['Rock', 'Paper', 'Scissors'];
+	let winner;
+	const randomNo = Math.floor(Math.random() * 3) + 1;
+
+	if( randomNo === number) {
+		return 'It is a tie';
+	}
+
+	switch(rps[number - 1]) {
+	case 'Rock':
+		winner = rps[randomNo - 1] === 'Paper'? 'Paper' : 'Rock';
+		break;
+	case 'Paper':
+		winner = rps[randomNo - 1] === 'Scissors'? 'Scissors' : 'Paper';
+		break;
+	case 'Scissors':
+		winner = rps[randomNo - 1] === 'Rock'? 'Rock' : 'Scissors';
+		break;
+	}
+
+	return winner;
+}
+
+console.log(rockPaperScissors(1));
+console.log(rockPaperScissors(2));
+console.log(rockPaperScissors(3));
+
 
 
 
