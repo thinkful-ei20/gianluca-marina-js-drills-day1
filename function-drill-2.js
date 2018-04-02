@@ -29,29 +29,65 @@ function decode(str) {
 	const firstLetter = str.charAt(0);
 	// console.log(firstLetter);
 	switch(firstLetter) {
-		case 'a':
-			console.log(str.charAt(1));
-			break;
-		case 'b':
-			console.log(str.charAt(2));
-			break;
-		case 'c':
-			console.log(str.charAt(3));
-			break;
-		case 'd':
-			console.log(str.charAt(4));
-			break;
-		default:
-			console.log(' ');
-			break;
+	case 'a':
+		console.log(str.charAt(1));
+		break;
+	case 'b':
+		console.log(str.charAt(2));
+		break;
+	case 'c':
+		console.log(str.charAt(3));
+		break;
+	case 'd':
+		console.log(str.charAt(4));
+		break;
+	default:
+		console.log(' ');
+		break;
 	}
 }
 
-decode('mouse');
-decode('dmouse');
-decode('amouse');
-decode('bmouse');
-decode('cmouse');
+// decode('mouse');
+// decode('dmouse');
+// decode('amouse');
+// decode('bmouse');
+// decode('cmouse');
+
+function daysInAMonth(month, leapYear) {
+	let result;
+	switch(month) {
+	case 'October':
+	case 'December':
+	case 'January':
+	case 'March':
+	case 'May':
+	case 'July':
+	case 'August':
+		result = 31;
+		break;
+	case 'September':
+	case 'November':
+	case 'April':
+	case 'June':
+		result = 30;
+		break;
+	case 'Febuary':
+		result = leapYear ? 29: 28;
+		break;
+	default:
+		return 'Must provide a valid Month';
+	}
+	return `There are ${result} days in ${month}`;
+}
+
+console.log(daysInAMonth('January', true));
+console.log(daysInAMonth('Febuary', false));
+console.log(daysInAMonth('March', false));
+console.log(daysInAMonth('Febuary', true));
+console.log(daysInAMonth('June', true));
+console.log(daysInAMonth('Fred', false));
+
+
 
 
 
