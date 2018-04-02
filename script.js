@@ -8,11 +8,16 @@ function yearOfBirth(age) {
 }
 
 function whoAmI(name, age) {
-	console.log(arguments[0], arguments[1]);
-	if(arguments[0] === undefined || arguments[1] === undefined) {
+
+	if(typeof name === undefined  || typeof age === undefined) {
+		console.error('Arguments not defined');
+		return;
+	}
+	if(typeof name !== 'string' || typeof age !== 'number') {
 		console.error('Arguments not valid');
 		return;
 	}
+
 	try {
 		let yob = yearOfBirth(age);
 		console.log(`Hi, my name is ${name} and I'm ${age} years old`);
@@ -22,4 +27,7 @@ function whoAmI(name, age) {
 	}
 }
 
-whoAmI();
+whoAmI(1, 'Bob');
+whoAmI('Bob', 3);
+whoAmI(1 , 1);
+whoAmI('Bob', 'Bob');
