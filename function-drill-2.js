@@ -88,7 +88,7 @@ function daysInAMonth(month, leapYear) {
 // console.log(daysInAMonth('Fred', false));
 
 function rockPaperScissors(number) {
-	if(typeof number !== 'number'){
+	if(typeof number !== 'number' || number < 1 || number > 3){
 		throw new Error('Must use valid input: 1,2 or 3');
 	}
 	const rps = ['Rock', 'Paper', 'Scissors'];
